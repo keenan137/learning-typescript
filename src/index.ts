@@ -102,3 +102,42 @@ const [lat, long] = useCoords();
 let userArr: [name: string, age: number]
 userArr = ['peach', 25];
 console.log(userArr[0])
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+// Interfaces
+interface Author {
+    name: string,
+    avatar: string
+}
+
+const authorOne: Author = {name: 'Mario', avatar: 'img.mario.png'};
+
+interface Post {
+    title: string,
+    body: string,
+    tags: string[],
+    create_at: Date,
+    author: Author
+}
+
+const newPost: Post = {
+    title: 'my first post',
+    body: 'something interesting',
+    tags: ['gaming', 'tech'],
+    create_at: new Date(),
+    author: authorOne
+};
+//----------------------------------------------------------------
+// As Function Arguments
+function createPost(post: Post): void{
+    console.log(`Created post ${post.create_at} by ${post.author.name}`);
+}
+createPost(newPost)
+//----------------------------------------------------------------
+// Interfaces with Arrays
+let posts: Post[] = []
+posts.push(newPost);
