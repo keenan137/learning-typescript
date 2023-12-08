@@ -2,6 +2,8 @@
 let age: number =  30;
 let firstName: string = "Mario";
 let isFictional: boolean;
+
+let anyVar;
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 // Type Inference - TypeScript will guess intelligently for us.
@@ -19,6 +21,8 @@ let anotherThing: undefined = undefined;
 let names: string[] = ["apples"];
 // names.push(39);
 names.push("test");
+
+let anyArray: any[] = [];
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 // Object Literals (also has type inference)
@@ -33,6 +37,8 @@ let user: {
 }
 //user.email = "luigi@gmail.com";
 user.name = "Luigi";
+
+let anyUser: any;
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 // Functions (also has type inference)
@@ -43,19 +49,23 @@ function addTwoNumbers(a: number, b: number){
 // addTwoNumbers(1, "2");
 addTwoNumbers(1, 2);
 
-const subtractTwoNumbers = (a: number, b: number): number =>{
+const subtractTwoNumbers = (a: number, b: number): number => {
     console.log(a-b);
     return a-b;
 }
 // subtractTwoNumbers(5, true);
 subtractTwoNumbers(5, 4);
 
-function addAllNumbers(items: number[]): number{
+function addAllNumbers(items: number[]): number {
     const total = items.reduce((a,b) => a+b, 0);
     console.log(total);
     return total;
 };
 // addAllNumbers([1,2,3,true]);
 addAllNumbers([1,2,3,4]);
+
+function addAny(value: any): any {
+    return value + value;
+}
 //----------------------------------------------------------------
 //----------------------------------------------------------------
