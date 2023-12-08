@@ -141,3 +141,39 @@ createPost(newPost)
 // Interfaces with Arrays
 let posts: Post[] = []
 posts.push(newPost);
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+// Type Aliases
+type Rgb = [number, number, number]
+
+// with functions
+function getRandomColor(): Rgb{
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+
+    return [r, g, b];
+}
+const colorOne = getRandomColor();
+console.log(`Color one: ${colorOne}`);
+
+// with object literal
+type User = {
+    name: string,
+    score: number
+}
+
+const userOne: User =  {
+    name: 'Mario',
+    score: 1
+}
+
+function formatUser(user: User): void{
+    console.log(`${user.name} has a score of ${user.score}`);
+}
+
+formatUser(userOne);
