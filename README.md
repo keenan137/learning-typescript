@@ -1,2 +1,7 @@
-# learning-typescript
-Started learning TypeScript and I'm saving my learning into this repo.
+# CLI-COMMANDS
+### To compile TS to JS
+```tsc --watch```
+<br>
+<br>
+### To run JS continuously
+```node --watch dist/index.js```
