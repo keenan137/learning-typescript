@@ -177,3 +177,58 @@ function formatUser(user: User): void{
 }
 
 formatUser(userOne);
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+// Union Types
+let someId: number | string
+someId = 3;
+someId = '3';
+
+let email: string | null = null
+email = 'mario@test.com'
+//----------------------------------------------------------------
+type Id = number | string
+let anotherId: Id = 1
+anotherId = '1'
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+// Type Guards
+function swapIdType(id: Id): Id{
+    if(typeof(id) === 'string'){
+        return parseInt(id);
+    }else{
+        return id.toString();
+    }
+}
+const idOne = swapIdType(1);
+const idTwo = swapIdType('2');
+console.log(idOne, idTwo);
+//----------------------------------------------------------------
+// Using interfaces with Type Guards
+interface IUser{
+    type: 'user',
+    username: string,
+    email: string,
+    id: Id
+}
+
+interface IPerson{
+    type: 'person',
+    firstname: string,
+    age: number,
+    id: Id
+}
+
+function logDetails(value: IUser | IPerson): void{
+    // if(typeof(IUser) == ??)
+    if(value.type === 'user'){
+        console.log(value.email, value.username);
+    }else{
+        console.log(value.firstname, value.age);
+    }
+}
+logDetails();
